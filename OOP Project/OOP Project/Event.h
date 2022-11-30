@@ -4,7 +4,7 @@
 using namespace std;
 
 class Event {
-private:
+public:
 	Location* location;
 	string date;
 	string time;

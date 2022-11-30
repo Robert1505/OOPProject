@@ -1,8 +1,17 @@
 #include <iostream>
+#include "EventStore.h"
+#include "Event.h"
+
 using namespace std;
 
 int main() {
-	cout << endl << "Hello";
+	Event event;
+	event.name = "123";
+
+	EventStore store;
+	store.addEvent(event);
+
+	return 0;
 }
 
 /*
