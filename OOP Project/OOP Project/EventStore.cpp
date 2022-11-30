@@ -24,6 +24,7 @@ void EventStore::addEvent(Event event) {
 
 	// replace the current events with the new array
 	events = newEvents;
+	numberOfEvents++;
 }
 
 void EventStore::initialize() {
