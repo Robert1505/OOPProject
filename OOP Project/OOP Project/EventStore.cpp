@@ -33,3 +33,7 @@ void EventStore::initialize() {
 	this->addEvent(Event("Captain America", "21/11/2021", "17:00"));
 	this->addEvent(Event("Avengers", "19/11/2021", "20:00"));
 }
+
+Event* EventStore::getEvents() {
+	return this->events;
+}

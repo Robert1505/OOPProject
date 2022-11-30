@@ -6,5 +6,5 @@
 using namespace std;
 
 void Menu::displayEvents(EventStore store){
-	cout << "The current events are" << endl;
+	cout << "The current events are:" << endl;
 }
