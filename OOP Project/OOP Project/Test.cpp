@@ -2,5 +2,15 @@
 using namespace std;
 
 int main() {
-	cout << endl << "Hello"
+	cout << endl << "Hello";
 }
+
+/*
+Classes needed:
+- Event
+- Location
+- Ticket
+
+- TicketIssuer
+- TicketValidator
+*/
