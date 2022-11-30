@@ -12,9 +12,6 @@ int main() {
 	store.addEvent(Event("Captain America", "21/11/2021", "17:00"));
 	store.addEvent(Event("Avengers", "19/11/2021", "20:00"));
 
-
-
-
 	return 0;
 }
 
