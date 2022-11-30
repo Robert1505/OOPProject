@@ -5,8 +5,7 @@
 using namespace std;
 
 int main() {
-	Event event;
-	event.name = "123";
+	Event event = Event("Black Panther", "30/11/2022", "19:00");
 
 	EventStore store;
 	store.addEvent(event);

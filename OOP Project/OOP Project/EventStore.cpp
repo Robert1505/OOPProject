@@ -25,5 +25,5 @@ void EventStore::addEvent(Event event) {
 	// replace the current events with the new array
 	events = newEvents;
 
-	cout << "New event has been added, with the name of " << event.name << endl;
+	cout << "New event has been added, with the name of " << event.getName() << endl;
 }
