@@ -7,6 +7,7 @@ class EventStore {
 private:
 	Event* events;
 	int numberOfEvents;
+	Event* resizeArray(int newSize);
 public:
 	EventStore() {
 		numberOfEvents = 0;
