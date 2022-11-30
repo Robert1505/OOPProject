@@ -7,4 +7,5 @@ using namespace std;
 class Menu {
 public:
 	void displayEvents(EventStore store);
+	void selectEvent();
 };

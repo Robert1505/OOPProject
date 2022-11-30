@@ -12,6 +12,7 @@ int main() {
 	Menu menu;
 
 	menu.displayEvents(store);
+	menu.selectEvent();
 
 	return 0;
 }

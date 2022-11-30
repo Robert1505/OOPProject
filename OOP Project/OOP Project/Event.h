@@ -17,4 +17,6 @@ public:
 	}
 	Event(){};
 	string getName();
+	string getDate();
+	string getTime();
 };
