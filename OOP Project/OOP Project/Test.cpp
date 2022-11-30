@@ -11,6 +11,7 @@ Classes needed:
 - Location
 - Ticket
 
+- EventStore
 - TicketIssuer
 - TicketValidator
 */
