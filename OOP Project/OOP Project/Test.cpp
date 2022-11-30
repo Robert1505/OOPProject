@@ -5,10 +5,15 @@
 using namespace std;
 
 int main() {
-	Event event = Event("Black Panther", "30/11/2022", "19:00");
-
 	EventStore store;
-	store.addEvent(event);
+	store.addEvent(Event("Black Panther", "30/11/2022", "19:00"));
+	store.addEvent(Event("Thor", "23/11/2021", "20:00"));
+	store.addEvent(Event("Fast And Furious", "24/11/2021", "21:00"));
+	store.addEvent(Event("Captain America", "21/11/2021", "17:00"));
+	store.addEvent(Event("Avengers", "19/11/2021", "20:00"));
+
+
+
 
 	return 0;
 }
