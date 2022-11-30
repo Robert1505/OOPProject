@@ -37,3 +37,7 @@ void EventStore::initialize() {
 Event* EventStore::getEvents() {
 	return this->events;
 }
+
+int EventStore::getNumberOfEvents() {
+	return this->numberOfEvents;
+};

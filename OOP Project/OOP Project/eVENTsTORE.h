@@ -16,4 +16,5 @@ public:
 	void addEvent(Event event);
 	void initialize();
 	Event* getEvents();
+	int getNumberOfEvents();
 };
