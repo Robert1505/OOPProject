@@ -25,3 +25,11 @@ void EventStore::addEvent(Event event) {
 	// replace the current events with the new array
 	events = newEvents;
 }
+
+void EventStore::initialize() {
+	this->addEvent(Event("Black Panther", "30/11/2022", "19:00"));
+	this->addEvent(Event("Thor", "23/11/2021", "20:00"));
+	this->addEvent(Event("Fast And Furious", "24/11/2021", "21:00"));
+	this->addEvent(Event("Captain America", "21/11/2021", "17:00"));
+	this->addEvent(Event("Avengers", "19/11/2021", "20:00"));
+}

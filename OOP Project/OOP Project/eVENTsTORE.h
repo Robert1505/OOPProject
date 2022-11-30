@@ -14,4 +14,5 @@ public:
 		events = new Event[numberOfEvents];
 	}
 	void addEvent(Event event);
+	void initialize();
 };
