@@ -12,3 +12,9 @@ string Event::getDate() {
 string Event::getTime() {
 	return this->time;
 }
+Location* Event::getLocation() {
+	return this->location;
+}
+void Event::setLocation(Location* location) {
+	this->location = location;
+}

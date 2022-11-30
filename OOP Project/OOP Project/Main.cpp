@@ -12,7 +12,16 @@ int main() {
 	Menu menu;
 
 	menu.displayEvents(store);
-	menu.selectEvent();
+	int selectedEventIndex = menu.selectEvent();
+
+	bool isEventAvailable = store.getEvents()[selectedEventIndex].getLocation()->isAvailable();
+
+	if (isEventAvailable) {
+		cout << "Event is available";
+	}
+	else {
+		cout << "Event is NOT available";
+	}
 
 	return 0;
 }

@@ -14,10 +14,12 @@ void Menu::displayEvents(EventStore store){
 	}
 }
 
-void Menu::selectEvent() {
+int Menu::selectEvent() {
 	cout << "Choose a MOVIE! (1 -> 5)" << endl;
 	int selectedEvent = 0;
 	cin >> selectedEvent;
+
+	return selectedEvent - 1;
 }
 
 // 1. Black Panther | Date: 11/20/2011 | Time: 19:00
