@@ -12,11 +12,12 @@ int main() {
 	Menu menu;
 
 	store.initialize();
-	TicketArray tickets = menu.getTickets(store, issuer);
+	TicketArray ticketArray = menu.getTickets(store, issuer);
+	Ticket* tickets = ticketArray.getTickets();
 
-	/*for (int i = 0; i < tickets; i++) {
+	for (int i = 0; i < ticketArray.getSize(); i++) {
 		cout << i + 1 << ". " << tickets[i].getId() << endl;
-	}*/
+	}
 
 	return 0;
 }
