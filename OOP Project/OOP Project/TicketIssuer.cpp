@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
+#include <string>
 #include "TicketIssuer.h"
 #include "Location.h"
 #include "TicketArray.h"
@@ -13,7 +15,8 @@ TicketArray TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
 	
 	Ticket* tickets = new Ticket[amountOfSeats];
 	for (int i = 0; i < amountOfSeats; i++) {
-		tickets[i] = Ticket("1234", event);
+		int randomNumber = (rand() % 100000) + 1;
+		tickets[i] = Ticket(to_string(randomNumber), event);
 	}
 
 	return TicketArray(tickets, amountOfSeats);
