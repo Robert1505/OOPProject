@@ -12,15 +12,7 @@ int main() {
 	Menu menu;
 
 	store.initialize();
-
-	menu.displayEvents(store);
-	int selectedEventIndex = menu.selectEvent();
-	Event selectedEvent = store.getEvent(selectedEventIndex);
-	int amountOfSeats = menu.selectAmountOfSeats(selectedEvent);
-
-	Ticket* myTicket = issuer.issueTicket(&selectedEvent, amountOfSeats);
-
-	cout << "\nNumber of occupied seats for " << selectedEvent.getName() << " are: " << selectedEvent.getLocation()->getOccupiedSeats();
+	Ticket* ticket = menu.getTicket(store, issuer);
 
 	return 0;
 }

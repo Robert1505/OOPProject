@@ -2,6 +2,8 @@
 #include "Event.h"
 #include "EventStore.h"
 #include "Menu.h"
+#include "Ticket.h"
+#include "TicketIssuer.h"
 
 using namespace std;
 
@@ -34,4 +36,14 @@ int Menu::selectAmountOfSeats(Event event) {
 	}
 
 	return amountOfSeats;
+}
+
+Ticket* Menu::getTicket(EventStore store, TicketIssuer issuer) {
+	displayEvents(store);
+	int selectedEventIndex = selectEvent();
+	Event selectedEvent = store.getEvent(selectedEventIndex);
+	int amountOfSeats = selectAmountOfSeats(selectedEvent);
+
+	Ticket* ticket = issuer.issueTicket(&selectedEvent, amountOfSeats);
+	return ticket;
 }
