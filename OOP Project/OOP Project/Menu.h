@@ -8,4 +8,5 @@ class Menu {
 public:
 	void displayEvents(EventStore store);
 	int selectEvent();
+	int selectAmountOfSeats(Event event);
 };

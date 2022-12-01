@@ -22,4 +22,16 @@ int Menu::selectEvent() {
 	return selectedEvent - 1;
 }
 
-// 1. Black Panther | Date: 11/20/2011 | Time: 19:00
+int Menu::selectAmountOfSeats(Event event) {
+	int amountOfSeats;
+	cout << "How many seats do you want to book?" << endl;
+	cin >> amountOfSeats;
+
+	if (!event.getLocation()->isAvailable(amountOfSeats)) {
+		cout << "The amount of seats requested is not available.";
+		cout << "\nRemaining seats for this event: " << event.getLocation()->getRemainingSeats();
+		return 0;
+	}
+
+	return amountOfSeats;
+}

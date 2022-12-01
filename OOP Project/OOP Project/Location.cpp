@@ -12,19 +12,13 @@ Location::Location(const Location& location) {
 	this->occupiedSeats = location.occupiedSeats;
 }
 bool Location::isAvailable(int amountOfSeats) {
-	return this->maxSeats > this->occupiedSeats;
+	return this->maxSeats >= this->occupiedSeats + amountOfSeats;
 };
 int Location::getRemainingSeats() {
 	return this->maxSeats - this->occupiedSeats;
 }
 void Location::occupySeats(int amountOfSeats) {
-	if (isAvailable(amountOfSeats)) {
-		this->occupiedSeats += amountOfSeats;
-	}
-	else {
-		cout << "The amount of seats requested is not available.";
-		cout << "\nRemaining seats for this event: " << getRemainingSeats();
-	}
+	this->occupiedSeats += amountOfSeats;
 }
 int Location::getOccupiedSeats() {
 	return this->occupiedSeats;
