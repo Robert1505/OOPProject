@@ -1,12 +1,13 @@
 #include <iostream>
 #include "TicketIssuer.h"
 #include "Location.h"
+#include "TicketArray.h"
 
 using namespace std;
 
-Ticket* TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
+TicketArray TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
 	if (!event->getLocation()->isAvailable(amountOfSeats)) 
-		return nullptr;
+		return TicketArray();
 	
 	event->getLocation()->occupySeats(amountOfSeats);
 	
@@ -15,5 +16,5 @@ Ticket* TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
 		tickets[i] = Ticket("1234", event);
 	}
 
-	return tickets;
+	return TicketArray(tickets, amountOfSeats);
 }

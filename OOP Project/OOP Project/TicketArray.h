@@ -8,5 +8,6 @@ private:
 	Ticket* tickets;
 	int size;
 public:
+	TicketArray();
 	TicketArray(Ticket* tickets, int size);
 };

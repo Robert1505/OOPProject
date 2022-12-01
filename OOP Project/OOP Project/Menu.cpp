@@ -38,12 +38,12 @@ int Menu::selectAmountOfSeats(Event event) {
 	return amountOfSeats;
 }
 
-Ticket* Menu::getTickets(EventStore store, TicketIssuer issuer) {
+TicketArray Menu::getTickets(EventStore store, TicketIssuer issuer) {
 	displayEvents(store);
 	int selectedEventIndex = selectEvent();
 	Event selectedEvent = store.getEvent(selectedEventIndex);
 	int amountOfSeats = selectAmountOfSeats(selectedEvent);
 
-	Ticket* tickets = issuer.issueTickets(&selectedEvent, amountOfSeats);
+	TicketArray tickets = issuer.issueTickets(&selectedEvent, amountOfSeats);
 	return tickets;
 }
