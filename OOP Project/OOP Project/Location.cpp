@@ -17,3 +17,6 @@ bool Location::isAvailable() {
 void Location::occupySeats(int amountOfSeats) {
 	this->occupiedSeats += amountOfSeats;
 }
+int Location::getOccupiedSeats() {
+	return this->occupiedSeats;
+}

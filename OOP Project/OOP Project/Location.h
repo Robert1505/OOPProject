@@ -11,4 +11,5 @@ public:
 	Location(const Location& location);
 	bool isAvailable();
 	void occupySeats(int amountOfSeats);
+	int getOccupiedSeats();
 };

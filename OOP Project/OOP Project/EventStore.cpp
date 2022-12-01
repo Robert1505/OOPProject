@@ -5,8 +5,8 @@
 using namespace std;
 
 EventStore::EventStore() {
-	numberOfEvents = 0;
-	events = new Event[numberOfEvents];
+	this->numberOfEvents = 0;
+	this->events = new Event[numberOfEvents];
 }
 
 Event* EventStore::resizeArray(int newSize) {
@@ -39,6 +39,10 @@ void EventStore::initialize() {
 	this->addEvent(Event("Fast And Furious", "24/11/2021", "21:00"));
 	this->addEvent(Event("Captain America", "21/11/2021", "17:00"));
 	this->addEvent(Event("Avengers", "19/11/2021", "20:00"));
+}
+
+Event EventStore::getEvent(int index) {
+	return this->events[index];
 }
 
 Event* EventStore::getEvents() {

@@ -15,8 +15,9 @@ int main() {
 
 	menu.displayEvents(store);
 	int selectedEventIndex = menu.selectEvent();
+	Event selectedEvent = store.getEvent(selectedEventIndex);
 
-	bool isEventAvailable = store.getEvents()[selectedEventIndex].getLocation()->isAvailable();
+	bool isEventAvailable = selectedEvent.getLocation()->isAvailable();
 
 	if (!isEventAvailable) {
 		cout << "Event is NOT available";
@@ -24,9 +25,9 @@ int main() {
 	}
 	cout << "Event is available";
 
-	Ticket* myTicket = issuer.issueTicket(&store.getEvents()[selectedEventIndex]);
+	Ticket* myTicket = issuer.issueTicket(&selectedEvent);
 
-	cout << "Your ticket ID is ";
+	cout << "\nYour ticket ID is " << myTicket->getId() << endl;
 
 	return 0;
 }
