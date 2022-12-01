@@ -11,3 +11,10 @@ TicketArray::TicketArray(Ticket* tickets, int size) {
 	this->tickets = tickets;
 	this->size = size;
 }
+
+int TicketArray::getSize() {
+	return this->size;
+}
+Ticket* TicketArray::getTickets() {
+	return this->tickets;
+}

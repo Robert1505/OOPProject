@@ -10,4 +10,6 @@ private:
 public:
 	TicketArray();
 	TicketArray(Ticket* tickets, int size);
+	int getSize();
+	Ticket* getTickets();
 };

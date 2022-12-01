@@ -14,7 +14,7 @@ int main() {
 	store.initialize();
 	TicketArray tickets = menu.getTickets(store, issuer);
 
-	/*for (int i = 0; i < sizeof(tickets) / sizeof(tickets[0]); i++) {
+	/*for (int i = 0; i < tickets; i++) {
 		cout << i + 1 << ". " << tickets[i].getId() << endl;
 	}*/
 
