@@ -9,7 +9,8 @@ private:
 public:
 	Location();
 	Location(const Location& location);
-	bool isAvailable();
+	int getRemainingSeats();
+	bool isAvailable(int amountOfSeats);
 	void occupySeats(int amountOfSeats);
 	int getOccupiedSeats();
 };

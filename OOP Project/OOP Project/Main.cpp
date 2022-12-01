@@ -17,17 +17,9 @@ int main() {
 	int selectedEventIndex = menu.selectEvent();
 	Event selectedEvent = store.getEvent(selectedEventIndex);
 
-	bool isEventAvailable = selectedEvent.getLocation()->isAvailable();
+	Ticket* myTicket = issuer.issueTicket(&selectedEvent, 5);
 
-	if (!isEventAvailable) {
-		cout << "Event is NOT available";
-		return 0;
-	}
-	cout << "Event is available";
-
-	Ticket* myTicket = issuer.issueTicket(&selectedEvent);
-
-	cout << "\nYour ticket ID is " << myTicket->getId() << endl;
+	cout << "\nNumber of occupied seats for " << selectedEvent.getName() << " are: " << selectedEvent.getLocation()->getOccupiedSeats();
 
 	return 0;
 }

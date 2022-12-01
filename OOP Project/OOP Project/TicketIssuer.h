@@ -8,5 +8,5 @@ class TicketIssuer {
 private:
 
 public:
-	Ticket* issueTicket(Event* event);
+	Ticket* issueTicket(Event* event, int amountOfSeats);
 };
