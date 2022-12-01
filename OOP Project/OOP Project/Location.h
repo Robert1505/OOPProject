@@ -16,4 +16,5 @@ public:
 		this->occupiedSeats = location.occupiedSeats;
 	}
 	bool isAvailable();
+	void occupySeats(int amountOfSeats);
 };
