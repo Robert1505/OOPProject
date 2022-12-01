@@ -9,10 +9,7 @@ private:
 	int numberOfEvents;
 	Event* resizeArray(int newSize);
 public:
-	EventStore() {
-		numberOfEvents = 0;
-		events = new Event[numberOfEvents];
-	}
+	EventStore();
 	void addEvent(Event event);
 	void initialize();
 	Event* getEvents();

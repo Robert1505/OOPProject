@@ -3,6 +3,12 @@
 
 using namespace std;
 
+Event::Event(string name, string date, string time) {
+	this->name = name;
+	this->date = date;
+	this->time = time;
+	this->location = new Location();
+}
 string Event::getName() {
 	return this->name;
 }

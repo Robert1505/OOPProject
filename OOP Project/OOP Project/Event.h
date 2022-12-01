@@ -10,13 +10,8 @@ private:
 	string time;
 	string name;
 public:
-	Event(string name, string date, string time) {
-		this->name = name;
-		this->date = date;
-		this->time = time;
-		this->location = new Location();
-	}
-	Event(){};
+	Event(string name, string date, string time);
+	Event();
 	string getName();
 	string getDate();
 	string getTime();

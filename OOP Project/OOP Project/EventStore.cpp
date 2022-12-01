@@ -4,6 +4,11 @@
 
 using namespace std;
 
+EventStore::EventStore() {
+	numberOfEvents = 0;
+	events = new Event[numberOfEvents];
+}
+
 Event* EventStore::resizeArray(int newSize) {
 	// create a new array of size n + 1
 	Event* newArray = new Event[newSize];
