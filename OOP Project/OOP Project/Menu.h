@@ -11,5 +11,5 @@ public:
 	void displayEvents(EventStore store);
 	int selectEvent();
 	int selectAmountOfSeats(Event event);
-	Ticket* getTicket(EventStore store, TicketIssuer issuer);
+	Ticket* getTickets(EventStore store, TicketIssuer issuer);
 };

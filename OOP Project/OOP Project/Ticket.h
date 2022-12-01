@@ -8,6 +8,7 @@ private:
 	string id;
 	Event* event;
 public:
+	Ticket();
 	Ticket(string id, Event* event);
 	string getId();
 };

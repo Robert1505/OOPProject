@@ -4,10 +4,16 @@
 
 using namespace std;
 
-Ticket* TicketIssuer::issueTicket(Event* event, int amountOfSeats) {
+Ticket* TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
 	if (!event->getLocation()->isAvailable(amountOfSeats)) 
 		return nullptr;
 	
 	event->getLocation()->occupySeats(amountOfSeats);
-	return new Ticket("123", event);
+	
+	Ticket* tickets = new Ticket[amountOfSeats];
+	for (int i = 0; i < amountOfSeats; i++) {
+		tickets[i] = Ticket("1234", event);
+	}
+
+	return tickets;
 }
