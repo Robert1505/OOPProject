@@ -17,12 +17,17 @@ TicketArray TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
 	for (int i = 0; i < amountOfSeats; i++) {
 		string ticketId = generateUniqueID(event);
 		tickets[i] = Ticket(ticketId, event);
+		event->addId(ticketId);
 	}
 
 	return TicketArray(tickets, amountOfSeats);
 }
 
 string TicketIssuer::generateUniqueID(Event* event) {
-	int randomNumber = (rand() % 100000) + 1;
-	return to_string(randomNumber);
+	string generatedId = "";
+	do {
+		int randomNumber = (rand() % 10) + 1;
+		generatedId = to_string(randomNumber);
+	} while (event->idExists(generatedId));
+	return generatedId;
 }
