@@ -15,3 +15,6 @@ Ticket::Ticket(string id, Event* event) {
 string Ticket::getId() {
 	return this->id;
 }
+Event* Ticket::getEvent() {
+	return this->event;
+};
