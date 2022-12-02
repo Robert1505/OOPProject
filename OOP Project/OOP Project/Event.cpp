@@ -4,7 +4,8 @@
 using namespace std;
 
 Event::Event() {
-
+	this->numberOfTickets = 0;
+	this->existingTicketIds = nullptr;
 }
 
 Event::Event(string name, string date, string time) {
@@ -12,6 +13,8 @@ Event::Event(string name, string date, string time) {
 	this->date = date;
 	this->time = time;
 	this->location = new Location();
+	this->numberOfTickets = 0;
+	this->existingTicketIds = nullptr;
 }
 string Event::getName() {
 	return this->name;
