@@ -26,7 +26,7 @@ TicketArray TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
 string TicketIssuer::generateUniqueID(Event* event) {
 	string generatedId = "";
 	do {
-		int randomNumber = (rand() % 10) + 1;
+		int randomNumber = (rand() % 100000) + 1;
 		generatedId = to_string(randomNumber);
 	} while (event->idExists(generatedId));
 	return generatedId;

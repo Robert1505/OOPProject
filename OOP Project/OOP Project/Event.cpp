@@ -40,6 +40,7 @@ void Event::addId(string id) {
 	newArray[this->numberOfTickets] = id;
 
 	existingTicketIds = newArray;
+	numberOfTickets++;
 }
 
 string* Event::getIds() {
