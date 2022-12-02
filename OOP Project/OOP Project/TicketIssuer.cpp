@@ -15,9 +15,14 @@ TicketArray TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
 	
 	Ticket* tickets = new Ticket[amountOfSeats];
 	for (int i = 0; i < amountOfSeats; i++) {
-		int randomNumber = (rand() % 100000) + 1;
-		tickets[i] = Ticket(to_string(randomNumber), event);
+		string ticketId = generateUniqueID(event);
+		tickets[i] = Ticket(ticketId, event);
 	}
 
 	return TicketArray(tickets, amountOfSeats);
+}
+
+string TicketIssuer::generateUniqueID(Event* event) {
+	int randomNumber = (rand() % 100000) + 1;
+	return to_string(randomNumber);
 }

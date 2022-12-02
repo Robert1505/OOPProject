@@ -11,4 +11,5 @@ private:
 
 public:
 	TicketArray issueTickets(Event* event, int amountOfSeats);
+	string generateUniqueID(Event* event);
 };
