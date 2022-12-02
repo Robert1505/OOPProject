@@ -47,3 +47,14 @@ TicketArray Menu::getTickets(EventStore store, TicketIssuer issuer) {
 	TicketArray tickets = issuer.issueTickets(&selectedEvent, amountOfSeats);
 	return tickets;
 }
+
+void Menu::validateTicket(TicketValidator validator, Ticket ticket) {
+	bool isTicketValid = validator.isTicketValid(ticket);
+
+	if (isTicketValid) {
+		cout << "Your ticket is valid!";
+	}
+	else {
+		cout << "Your ticket is invalid!";
+	}
+}

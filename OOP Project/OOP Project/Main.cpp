@@ -22,15 +22,7 @@ int main() {
 	}
 
 	Ticket randomTicket = Ticket("123", &store.getEvent(0));
-
-	bool isTicketValid = validator.isTicketValid(randomTicket);
-
-	if (isTicketValid) {
-		cout << "Your ticket is valid!";
-	}
-	else {
-		cout << "Your ticket is invalid!";
-	}
+	menu.validateTicket(validator, randomTicket);
 
 	return 0;
 }
