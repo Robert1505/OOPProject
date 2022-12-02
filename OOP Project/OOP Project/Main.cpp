@@ -21,7 +21,16 @@ int main() {
 		cout << i + 1 << ". " << tickets[i].getId() << endl;
 	}
 
-	Ticket randomTicket = Ticket("123", &store.getEvent(0));
+	string id;
+	int eventIndex;
+
+
+	cout << "What is your ticket id?" << endl;
+	cin >> id;
+	cout << "To what event are you going? (1 - 5) " << endl;
+	cin >> eventIndex;
+
+	Ticket randomTicket = Ticket(id, &store.getEvent(eventIndex - 1));
 	menu.validateTicket(validator, randomTicket);
 
 	return 0;
