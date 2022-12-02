@@ -12,7 +12,7 @@ public:
 	EventStore();
 	void addEvent(Event event);
 	void initialize();
-	Event getEvent(int index);
+	Event* getEvent(int index);
 	Event* getEvents();
 	int getNumberOfEvents();
 };

@@ -41,8 +41,8 @@ void EventStore::initialize() {
 	this->addEvent(Event("Avengers", "19/11/2021", "20:00"));
 }
 
-Event EventStore::getEvent(int index) {
-	return this->events[index];
+Event* EventStore::getEvent(int index) {
+	return &this->events[index];
 }
 
 Event* EventStore::getEvents() {

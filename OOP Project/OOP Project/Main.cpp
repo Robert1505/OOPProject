@@ -30,7 +30,7 @@ int main() {
 	cout << "To what event are you going? (1 - 5) " << endl;
 	cin >> eventIndex;
 
-	Ticket randomTicket = Ticket(id, &store.getEvent(eventIndex - 1));
+	Ticket randomTicket = Ticket(id, store.getEvent(eventIndex - 1));
 	menu.validateTicket(validator, randomTicket);
 
 	return 0;

@@ -24,14 +24,14 @@ int Menu::selectEvent() {
 	return selectedEvent - 1;
 }
 
-int Menu::selectAmountOfSeats(Event event) {
+int Menu::selectAmountOfSeats(Event* event) {
 	int amountOfSeats;
 	cout << "How many seats do you want to book?" << endl;
 	cin >> amountOfSeats;
 
-	if (!event.getLocation()->isAvailable(amountOfSeats)) {
+	if (!event->getLocation()->isAvailable(amountOfSeats)) {
 		cout << "The amount of seats requested is not available.";
-		cout << "\nRemaining seats for this event: " << event.getLocation()->getRemainingSeats();
+		cout << "\nRemaining seats for this event: " << event->getLocation()->getRemainingSeats();
 		return 0;
 	}
 
@@ -41,10 +41,10 @@ int Menu::selectAmountOfSeats(Event event) {
 TicketArray Menu::getTickets(EventStore store, TicketIssuer issuer) {
 	displayEvents(store);
 	int selectedEventIndex = selectEvent();
-	Event selectedEvent = store.getEvent(selectedEventIndex);
+	Event* selectedEvent = store.getEvent(selectedEventIndex);
 	int amountOfSeats = selectAmountOfSeats(selectedEvent);
 
-	TicketArray tickets = issuer.issueTickets(&selectedEvent, amountOfSeats);
+	TicketArray tickets = issuer.issueTickets(selectedEvent, amountOfSeats);
 	return tickets;
 }
 

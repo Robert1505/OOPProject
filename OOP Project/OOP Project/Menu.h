@@ -12,7 +12,7 @@ class Menu {
 public:
 	void displayEvents(EventStore store);
 	int selectEvent();
-	int selectAmountOfSeats(Event event);
+	int selectAmountOfSeats(Event* event);
 	TicketArray getTickets(EventStore store, TicketIssuer issuer);
 	void validateTicket(TicketValidator validator, Ticket ticket);
 };
