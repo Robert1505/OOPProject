@@ -9,6 +9,8 @@ private:
 	string date;
 	string time;
 	string name;
+	string* existingTicketIds;
+	int numberOfTickets;
 public:
 	Event(string name, string date, string time);
 	Event();
@@ -17,4 +19,6 @@ public:
 	string getTime();
 	Location* getLocation();
 	void setLocation(Location* location);
+	void addId(string id);
+	string* getIds();
 };

@@ -28,3 +28,20 @@ Location* Event::getLocation() {
 void Event::setLocation(Location* location) {
 	this->location = location;
 }
+
+void Event::addId(string id) {
+	string* newArray = new string[this->numberOfTickets + 1];
+
+	for (int i = 0; i < this->numberOfTickets; i++) {
+		newArray[i] = this->existingTicketIds[i];
+	}
+
+	delete[] existingTicketIds;
+	newArray[this->numberOfTickets] = id;
+
+	existingTicketIds = newArray;
+}
+
+string* Event::getIds() {
+	return this->existingTicketIds;
+}
