@@ -45,3 +45,11 @@ void Event::addId(string id) {
 string* Event::getIds() {
 	return this->existingTicketIds;
 }
+
+bool Event::idExists(string id) {
+	for (int i = 0; i < this->numberOfTickets; i++) {
+		if (id == this->existingTicketIds[i])
+			return true;
+	}
+	return false;
+}

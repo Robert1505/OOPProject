@@ -21,4 +21,5 @@ public:
 	void setLocation(Location* location);
 	void addId(string id);
 	string* getIds();
+	bool idExists(string id);
 };
