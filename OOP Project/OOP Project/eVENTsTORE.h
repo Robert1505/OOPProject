@@ -15,5 +15,5 @@ public:
 	Event* getEvent(int index);
 	Event* getEvents();
 	int getNumberOfEvents();
-	//~EventStore();
+	~EventStore();
 };

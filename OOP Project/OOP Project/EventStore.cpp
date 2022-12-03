@@ -53,8 +53,8 @@ int EventStore::getNumberOfEvents() {
 	return this->numberOfEvents;
 };
 
-//EventStore::~EventStore() {
-//	delete[] this->events;
-//	this->events = nullptr;
-//	this->numberOfEvents = 0;
-//}
+EventStore::~EventStore() {
+	this->events = nullptr;
+	delete[] this->events;
+	this->numberOfEvents = 0;
+}
