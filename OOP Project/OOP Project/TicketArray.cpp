@@ -20,8 +20,8 @@ Ticket* TicketArray::getTickets() {
 	return this->tickets;
 }
 
-//TicketArray::~TicketArray() {
-//	delete[] this->tickets;
-//	this->tickets = nullptr;
-//	this->size = 0;
-//}
+TicketArray::~TicketArray() {
+	this->tickets = nullptr;
+	delete[] this->tickets;
+	this->size = 0;
+}
