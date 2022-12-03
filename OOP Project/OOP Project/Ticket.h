@@ -12,5 +12,5 @@ public:
 	Ticket(string id, Event* event);
 	string getId();
 	Event* getEvent();
-	//~Ticket();
+	~Ticket();
 };

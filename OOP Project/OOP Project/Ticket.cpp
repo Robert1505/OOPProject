@@ -18,7 +18,7 @@ string Ticket::getId() {
 Event* Ticket::getEvent() {
 	return this->event;
 };
-//Ticket::~Ticket() {
-//	delete this->event;
-//	this->event = nullptr;
-//}
+Ticket::~Ticket() {
+	this->event = nullptr;
+	delete this->event;
+}
