@@ -22,4 +22,5 @@ public:
 	void addId(string id);
 	string* getIds();
 	bool idExists(string id);
+	~Event();
 };

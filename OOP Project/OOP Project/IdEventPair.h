@@ -11,5 +11,5 @@ private:
 public:
 	IdEventPair();
 	IdEventPair(string eventName);
-
+	~IdEventPair();
 };

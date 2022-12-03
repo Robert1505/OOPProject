@@ -36,15 +36,3 @@ int main() {
 	return 0;
 }
 
-/*
-Classes needed:
-- Event
-- Location
-- Ticket
-
-- EventStore
-- TicketIssuer
-- TicketValidator
-
-- Menu
-*/

@@ -57,3 +57,11 @@ bool Event::idExists(string id) {
 	}
 	return false;
 }
+
+Event::~Event(){
+	this->existingTicketIds = nullptr;
+	delete[] this->existingTicketIds;
+	this->location = nullptr;
+	delete this->location;
+	this->numberOfTickets = 0;
+}

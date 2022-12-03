@@ -15,6 +15,13 @@ TicketArray::TicketArray(Ticket* tickets, int size) {
 int TicketArray::getSize() {
 	return this->size;
 }
+
 Ticket* TicketArray::getTickets() {
 	return this->tickets;
 }
+
+//TicketArray::~TicketArray() {
+//	delete[] this->tickets;
+//	this->tickets = nullptr;
+//	this->size = 0;
+//}
