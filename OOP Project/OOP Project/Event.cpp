@@ -16,18 +16,23 @@ Event::Event(string name, string date, string time) {
 	this->numberOfTickets = 0;
 	this->existingTicketIds = nullptr;
 }
+
 string Event::getName() {
 	return this->name;
 }
+
 string Event::getDate() {
 	return this->date;
 }
+
 string Event::getTime() {
 	return this->time;
 }
+
 Location* Event::getLocation() {
 	return this->location;
 }
+
 void Event::setLocation(Location* location) {
 	this->location = location;
 }

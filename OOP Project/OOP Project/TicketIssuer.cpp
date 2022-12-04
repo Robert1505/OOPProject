@@ -8,11 +8,11 @@
 using namespace std;
 
 TicketArray TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
-	if (!event->getLocation()->isAvailable(amountOfSeats)) 
+	if (!event->getLocation()->isAvailable(amountOfSeats))
 		return TicketArray();
-	
+
 	event->getLocation()->occupySeats(amountOfSeats);
-	
+
 	Ticket* tickets = new Ticket[amountOfSeats];
 	for (int i = 0; i < amountOfSeats; i++) {
 		string ticketId = generateUniqueID(event);
@@ -21,7 +21,7 @@ TicketArray TicketIssuer::issueTickets(Event* event, int amountOfSeats) {
 	}
 
 	return TicketArray(tickets, amountOfSeats);
-}
+};
 
 string TicketIssuer::generateUniqueID(Event* event) {
 	string generatedId = "";
@@ -31,4 +31,4 @@ string TicketIssuer::generateUniqueID(Event* event) {
 		generatedId = to_string(randomNumber);
 	} while (event->idExists(generatedId));
 	return generatedId;
-}
+};
