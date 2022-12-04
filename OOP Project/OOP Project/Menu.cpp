@@ -20,7 +20,6 @@ int Menu::selectEvent() {
 	cout << "Choose a MOVIE! (1 -> 5)" << endl;
 	int selectedEvent = 0;
 	cin >> selectedEvent;
-
 	return selectedEvent - 1;
 }
 
@@ -31,7 +30,7 @@ int Menu::selectAmountOfSeats(Event* event) {
 
 	if (!event->getLocation()->isAvailable(amountOfSeats)) {
 		cout << "The amount of seats requested is not available.";
-		cout << "\nRemaining seats for this event: " << event->getLocation()->getRemainingSeats();
+		cout << "\nRemaining seats for this event: " << event->getLocation()->getRemainingSeats() << endl;
 		return 0;
 	}
 
@@ -41,11 +40,13 @@ int Menu::selectAmountOfSeats(Event* event) {
 TicketArray Menu::getTickets(EventStore store, TicketIssuer issuer) {
 	displayEvents(store);
 	int selectedEventIndex = selectEvent();
-	Event* selectedEvent = store.getEvent(selectedEventIndex);
-	int amountOfSeats = selectAmountOfSeats(selectedEvent);
-
-	TicketArray tickets = issuer.issueTickets(selectedEvent, amountOfSeats);
-	return tickets;
+	if (selectedEventIndex >= 0 && selectedEventIndex <= 4) {
+		Event* selectedEvent = store.getEvent(selectedEventIndex);
+		int amountOfSeats = selectAmountOfSeats(selectedEvent);
+		TicketArray tickets = issuer.issueTickets(selectedEvent, amountOfSeats);
+		return tickets;
+	}
+	else cout << "This event does not exist!" << endl;
 }
 
 void Menu::validateTicket(TicketValidator validator, Ticket ticket) {
