@@ -16,23 +16,25 @@ int main() {
 	store.initialize();
 	TicketArray ticketArray = menu.getTickets(store, issuer);
 	Ticket* tickets = ticketArray.getTickets();
+	if (ticketArray.getSize() == 0) return 0;
+	else {
+		for (int i = 0; i < ticketArray.getSize(); i++) {
+			cout << i + 1 << ". " << tickets[i].getId() << endl;
+		}
 
-	for (int i = 0; i < ticketArray.getSize(); i++) {
-		cout << i + 1 << ". " << tickets[i].getId() << endl;
+		string id;
+		int eventIndex;
+
+
+		cout << "What is your ticket id?" << endl;
+		cin >> id;
+		cout << "To what event are you going? (1 - 5) " << endl;
+		cin >> eventIndex;
+
+		Ticket randomTicket = Ticket(id, store.getEvent(eventIndex - 1));
+		menu.validateTicket(validator, randomTicket);
+
+		return 0;
 	}
-
-	string id;
-	int eventIndex;
-
-
-	cout << "What is your ticket id?" << endl;
-	cin >> id;
-	cout << "To what event are you going? (1 - 5) " << endl;
-	cin >> eventIndex;
-
-	Ticket randomTicket = Ticket(id, store.getEvent(eventIndex - 1));
-	menu.validateTicket(validator, randomTicket);
-
-	return 0;
 }
 

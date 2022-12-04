@@ -46,7 +46,9 @@ TicketArray Menu::getTickets(EventStore store, TicketIssuer issuer) {
 		TicketArray tickets = issuer.issueTickets(selectedEvent, amountOfSeats);
 		return tickets;
 	}
-	else cout << "This event does not exist!" << endl;
+	else {
+		cout << "This event does not exist!" << endl;
+	};
 }
 
 void Menu::validateTicket(TicketValidator validator, Ticket ticket) {
